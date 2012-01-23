@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<xml>
+	<method>messages.multiple</method>
+	<total>1</total>
+	<time>2009-12-10 06:09:15 GMT</time>
+	<timestamp>1260425355 GMT</timestamp>
+	<data>
+		<result>queued</result>
+		<total_recipients>2</total_recipients>
+		<total_recipients_queued>2</total_recipients_queued>
+		<contact_list_addition>no list provided</contact_list_addition>
+		<message_id>123456</message_id>
+	</data>
+</xml>
