@@ -32,6 +32,14 @@ describe BurstSms do
       @response.result.should == nil
       @response.error.should == 'Authentication failed - key: 797987, secret: x'
     end
+    
+    it "Add sendtime and contact_list if present" do
+    time = Time.now
+    @request = @burst.build_message('6147779990', @numbers_cocktail, "sms txt\n of words and such:/", :sendtime => time, :contact_list => "123456")
+    @nok_request = Nokogiri::XML(@request)
+    @nok_request.should have_xml("//request/params/sendtime")
+    @nok_request.should have_xml("//request/params/contact_list")
+    end
   
     it "Populates the API credentials" do
       @nok_request.should have_xml('//request/key', '79798797897')

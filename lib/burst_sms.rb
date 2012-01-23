@@ -13,6 +13,7 @@ module BurstSms
     element :message, String
     element :sendtime, Time
     element :caller_id, String
+    element :contact_list, String
     
     def initialize(parameters=[])
       parameters.each_pair do |property,value|
@@ -55,14 +56,19 @@ module BurstSms
       self.version = API_VERSION
     end
     
-    def send_message(from, recipients, message)
+    def send_message(from, recipients, message, options={})
       #XML request has to be wrapped as a 'request' param in body
-      response = HTTParty.post( API_URL, :body => "request=#{self.build_message(from, recipients, message)}" )
+      response = HTTParty.post( API_URL, :body => "request=#{self.build_message(from, recipients, message, options)}" )
       ResponseData.parse(response.body)
     end
     
-    def build_message(from, recipients, message)
-      self.params = Param.new(:mobile => sanitize_numbers(recipients), :caller_id => check_valid_sender(from), :message => encode_msg(message))
+    def build_message(from, recipients, message, options={})
+      self.params = Param.new(:caller_id => check_valid_sender(from), 
+                              :mobile => sanitize_numbers(recipients), 
+                              :message => encode_msg(message),
+                              :sendtime => (options.has_key?(:sendtime) ? options[:sendtime] : nil),
+                              :contact_list => (options.has_key?(:contact_list) ? options[:contact_list] : nil)
+                              )
       self.api_method = "messages.multiple"
       self.to_xml()
     end
