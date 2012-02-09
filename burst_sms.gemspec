@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["David Barlow"]
   s.email       = ["david@madeindata.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Ruby Interface for the Burst SMS gateway}
+  # s.description = %q{TODO: Write a gem description}
 
   s.rubyforge_project = "burst_sms"
 
@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   
   s.add_development_dependency "rspec", "~> 2.6"
   s.add_development_dependency "webmock", "~> 1.7.10"
-  # s.add_development_dependency 'bundler', '>= 1.0.14'
   s.add_development_dependency 'rake'
   
 end

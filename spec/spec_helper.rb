@@ -2,6 +2,8 @@ require 'rspec'
 require 'nokogiri'
 require 'webmock/rspec'
 
+require File.dirname(__FILE__) + '/../lib/burst_sms'
+
 RSpec.configure do |config|
   config.color_enabled = true
   config.formatter     = 'documentation'

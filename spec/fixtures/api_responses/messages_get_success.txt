@@ -1,0 +1,53 @@
+<?xml version='1.0'?>
+<xml>
+	<method>messages.get</method>
+	<total>67</total>
+	<time>2009-12-21 23:08:45 GMT</time>
+	<timestamp>1261436925 GMT</timestamp>
+	<dataset>
+		<data>
+			<id>28153</id>
+			<list_id>175</list_id>
+			<mobile_from>61406614352</mobile_from>
+			<message>go go gadget goer</message>
+			<datetime_send>2009-12-21 23:00:43</datetime_send>
+			<datetime_actioned>2009-12-21 22:58:50</datetime_actioned>
+			<recipient_count>1</recipient_count>
+			<status>completed</status>
+			<schedule>No</schedule>
+		</data>
+		<data>
+			<id>28152</id>
+			<list_id>175</list_id>
+			<mobile_from>61406614352</mobile_from>
+			<message>hey me</message>
+			<datetime_send>2009-12-21 22:50:29</datetime_send>
+			<datetime_actioned>0000-00-00 00:00:00</datetime_actioned>
+			<recipient_count>0</recipient_count>
+			<status>active</status>
+			<schedule>No</schedule>
+		</data>
+		<data>
+			<id>28109</id>
+			<list_id>0</list_id>
+			<mobile_from>61406614352</mobile_from>
+			<message>Haircut reminder</message>
+			<datetime_send>2009-12-16 02:55:00</datetime_send>
+			<datetime_actioned>2009-12-16 02:55:01</datetime_actioned>
+			<recipient_count>1</recipient_count>
+			<status>completed</status>
+			<schedule>Yes</schedule>
+		</data>
+		<data>
+			<id>28104</id>
+			<list_id>175</list_id>
+			<mobile_from>REPLY-NUMBER</mobile_from>
+			<message>Hi me, [opt-out-info]</message>
+			<datetime_send>2009-12-14 22:20:15</datetime_send>
+			<datetime_actioned>2009-12-14 22:18:20</datetime_actioned>
+			<recipient_count>1</recipient_count>
+			<status>completed</status>
+			<schedule>No</schedule>
+		</data>
+	</dataset>
+</xml>
