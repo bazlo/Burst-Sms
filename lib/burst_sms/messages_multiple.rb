@@ -25,8 +25,9 @@ module BurstSms
       element :total_recipients, String, :xpath => "data/total_recipients"
       element :total_recipients_queued, String, :xpath => "data/total_recipients_queued"
       element :message_id, String, :xpath => "data/message_id"
+      element :contact_list_addition, String, :xpath => "data/contact_list_addition"
       element :error, String
-    
+      
     end
   end
 end

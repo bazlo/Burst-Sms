@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<xml>
+	<method>messages.add</method>
+	<total>1</total>
+	<time>2009-12-11 01:41:47 GMT</time>
+	<timestamp>1260495707 GMT</timestamp>
+	<data>
+		<result>queued</result>
+		<message_id>28076</message_id>
+		<list_id>1075</list_id>
+		<message>my sms body</message>
+		<cost>0.084</cost>
+		<balance>1.72</balance>
+		<charge_error>None</charge_error>
+		<datetime_send>2009-12-10 14:41:46</datetime_send>
+	</data>
+</xml

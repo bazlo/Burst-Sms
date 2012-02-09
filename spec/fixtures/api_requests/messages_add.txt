@@ -1,0 +1,12 @@
+request=<?xml version="1.0"?>
+<request>
+  <version>0.3</version>
+  <key>79798797897</key>
+  <secret>x</secret>
+  <method>messages.add</method>
+  <params>
+    <caller_id>6147779990</caller_id>
+    <message>sms%20txt%0A%20of%20words%20and%20such%3A%2F</message>
+    <list_id>1075</list_id>
+  </params>
+</request>

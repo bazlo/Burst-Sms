@@ -102,5 +102,41 @@ describe BurstSms do
     end
   end
   
+  context "'messages.add' - http://burstsms.com/api-documentation/messages.add" do
+    
+    it "Builds correct XML structure" do
+      @request_body = @burst.add_message_body('6147779990', 123 , "sms txt\n of words and such:/")
+      @nok_parsed = Nokogiri::XML(@request_body)
+      nodes = ['//request/method', '//request/params/list_id', '//request/params/caller_id', '//request/params/message']
+      nodes.each { |n| @nok_parsed.should have_xml(n)}
+    end
+    
+    it "Sends correct API request and parses XML response to ruby object" do
+      # This has the potential to fail in ruby-1.8 due to Hash ordering... or lack of it.
+      stub_request(:post, BurstSms::API_URL).with(:body => File.read('spec/fixtures/api_requests/messages_add.txt')).to_return(:status => 200, :body => File.read('spec/fixtures/api_responses/messages_add_success.txt'))
+      @response = @burst.add_message('6147779990', 1075 , "sms txt\n of words and such:/")
+      @response.total.should == '1'
+      @response.result.should == 'queued'
+      @response.list_id.should == "1075"
+      @response.error.should == nil
+    end
+    
+    it "Create error from failed response" do
+      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/messages_add_failure.txt"))
+      @response = @burst.add_message('6147779990', 1075 , "sms txt\n of words and such:/")
+      @response.total.should == nil
+      @response.error.should == 'Authentication failed - key: 797987, secret: x'
+    end
+    
+    it "Encodes message body to URI format" do
+      @nok_parsed.should have_xml('//params/message', 'sms%20txt%0A%20of%20words%20and%20such%3A%2F')
+    end
+  
+    it "Checks sender ID Length" do
+      expect {@burst.add_message_body('61477799900a', 1075, "sms" ) }.to raise_error("Sender ID is too Long")
+      expect {@burst.add_message_body('6147779990012345', 1075, "sms" ) }.to raise_error("Sender Number is too Long")
+      
+    end
+  end
 
 end

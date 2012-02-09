@@ -10,6 +10,7 @@ module BurstSms
 
     include MessagesMultiple
     include MessagesGet
+    include MessagesAdd
 
     tag 'request'
     
