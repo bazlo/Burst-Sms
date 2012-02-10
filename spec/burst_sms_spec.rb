@@ -129,6 +129,8 @@ describe BurstSms do
     end
     
     it "Encodes message body to URI format" do
+      @request_body = @burst.add_message_body('6147779990', 123 , "sms txt\n of words and such:/")
+      @nok_parsed = Nokogiri::XML(@request_body)
       @nok_parsed.should have_xml('//params/message', 'sms%20txt%0A%20of%20words%20and%20such%3A%2F')
     end
   
