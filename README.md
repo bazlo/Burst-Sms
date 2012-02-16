@@ -53,6 +53,10 @@ Usage
 **Add Contact List** - [contact-lists.add](http://burstsms.com/api-documentation/contact-lists.add)
 
     @burstsms.add_list('name of new list')    
+    
+**Delete Contact List** - [contact-lists.delete](http://burstsms.com/api-documentation/contact-lists.delete)
+
+    @burstsms.delete_list('list_id')    
 
 TODO
 ----

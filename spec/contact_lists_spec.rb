@@ -56,7 +56,31 @@ describe BurstSms do
       @response.total.should == nil
       @response.error.should == 'Authentication failed - key: 797987, secret: x'
     end
+  end
+  
+  context "'contact-lists.delete' - http://burstsms.com.au/api-documentation/contact-lists.delete"  do
+    it "Builds correct XML structure" do
+      @request_body = @burst.delete_list_body("123")
+      @nok_parsed = Nokogiri::XML(@request_body)
+      nodes = ['//request/key', '//request/secret', '//request/version', '//request/method', '//request/params/id']
+      nodes.each { |n| @nok_parsed.should have_xml(n)}
+    end
     
+    it "Sends correct API request and parses XML response to ruby object" do
+      # This has the potential to fail in ruby-1.8 due to Hash ordering... or lack of it.
+      stub_request(:post, BurstSms::API_URL).with(:body => File.read('spec/fixtures/api_requests/lists_delete.txt')).to_return(:status => 200, :body => File.read('spec/fixtures/api_responses/lists_delete_success.txt'))
+      @response = @burst.delete_list("123")
+      @response.total.should == '1'
+      @response.response == 'DELETED'
+      @response.error.should == nil
+    end
+    
+    it "Create error from failed response" do
+      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/generic_failure.txt"))
+      @response = @burst.delete_list("123")
+      @response.total.should == nil
+      @response.error.should == 'Authentication failed - key: 797987, secret: x'
+    end
   end
   
 end
