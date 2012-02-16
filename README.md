@@ -20,18 +20,13 @@ Usage
 
     @burstsms = BurstSms::API.new('api_key', 'secret')
     
-## Responses  
-Responses from the API are converted into a ruby objects with attributes you can access.
+**Responses**    
+Responses from the API are converted into a ruby objects with attributes you can access. 
+ 
+Available attributes for each method are listed in their description below.  
 
-Every method will return a `error` attribute if something goes wrong:
+Every method will return a `error` attribute if something goes wrong
 
-__example__: 
-
-    response = @burstsms.get_messages()
-
-    response.messages.each { |msg| puts msg.id }
-
-Available attributes for each method are listed in their description below.
 
 **Send a SMS** - [messages.multiple](http://burstsms.com/api-documentation/messages.multiple)
 
