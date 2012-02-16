@@ -1,0 +1,12 @@
+request=<?xml version="1.0"?>
+<request>
+  <version>0.3</version>
+  <key>79798797897</key>
+  <secret>x</secret>
+  <method>messages.responses</method>
+  <params>
+    <offset>0</offset>
+    <limit>50</limit>
+    <message_id>123</message_id>
+  </params>
+</request>

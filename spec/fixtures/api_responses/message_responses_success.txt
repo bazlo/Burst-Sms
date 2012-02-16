@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+<xml>
+	<method>messages.responses</method>
+	<total>4</total>
+	<time>2010-04-21 04:16:33 GMT</time>
+	<timestamp>1271823393 GMT</timestamp>
+	<dataset>
+		<data>
+			<firstname>Bob</firstname>
+			<lastname>Dobbalina</lastname>
+			<mobile>61406000052</mobile>
+			<datetime_entry_orig>2010-01-22 04:05:35</datetime_entry_orig>
+			<response>Hey me</response>
+		</data>
+	</dataset>
+</xml>

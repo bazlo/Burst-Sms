@@ -42,8 +42,15 @@ Usage
 
     @burstsms.get_messages()  
     
-    #takes optional offset and/or limit(default is 50)
-    @burstsms.get_messages(2,10)
+    #takes optional offset and limit(default is 50)
+    @burstsms.get_messages(20,40)
+    
+**Retrieve responses from a message** - [messages.responses](http://burstsms.com/api-documentation/messages.responses)
+
+    @burstsms.message_responses('message_id')  
+
+    #takes optional offset and limit(default is 50)
+    @burstsms.message_responses('message_id', 20, 40)    
 
 TODO
 ----
@@ -54,4 +61,4 @@ TODO
 Licence
 -------
 
-Copyright © 2012 Made in Data Pty Ltd and David Barlow [@madeindata](http://twitter.com/madeindata). Refer to terms in LICENCE file.
+Copyright © 2012 *Made in Data Pty Ltd* and *David Barlow* [@madeindata](http://twitter.com/madeindata). Refer to terms in LICENCE file.

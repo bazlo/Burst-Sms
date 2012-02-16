@@ -22,6 +22,7 @@ end
 require 'burst_sms/messages_multiple'
 require 'burst_sms/messages_get'
 require 'burst_sms/messages_add'
+require 'burst_sms/message_responses'
 require 'burst_sms/api'
 
 
