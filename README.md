@@ -1,4 +1,4 @@
-# Burst Sms 
+# Burst Sms   [![Build Status](https://secure.travis-ci.org/madeindata/Burst-Sms.png?branch=master)](http://travis-ci.org/madeindata/Burst-Sms)
 
 Rubygem for the Burst SMS API. Sends SMS to Australian mobiles  
 For use with a [burstsms.com.au](http://burstsms.com.au) account.
