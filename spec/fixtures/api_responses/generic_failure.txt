@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <xml>
-  <method>messages.add</method>
+  <method>some.method</method>
   <time>2012-01-23 03:27:42 GMT</time>
   <timestamp>1327289262 GMT</timestamp>
   <error>Authentication failed - key: 797987, secret: x</error>

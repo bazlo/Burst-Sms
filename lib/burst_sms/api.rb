@@ -5,13 +5,15 @@ module BurstSms
   API_VERSION = 0.3
   
   class API
-    
     include HappyMapper
 
     include MessagesMultiple
     include MessagesGet
     include MessagesAdd
     include MessageResponses
+    
+    include ListsGet
+    include ListsAdd
 
     tag 'request'
     

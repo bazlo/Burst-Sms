@@ -1,0 +1,11 @@
+request=<?xml version="1.0"?>
+<request>
+  <version>0.3</version>
+  <key>79798797897</key>
+  <secret>x</secret>
+  <method>contact-lists.get</method>
+  <params>
+    <offset>0</offset>
+    <limit>50</limit>
+  </params>
+</request>

@@ -68,7 +68,7 @@ describe BurstSms do
     end
     
     it "Create error from failed response" do
-      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/send_message_failure.txt"))
+      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/generic_failure.txt"))
       @response = @burst.send_message('6147779990', @numbers_cocktail, "sms txt\n of words and such:/" )
       @response.result.should == nil
       @response.error.should == 'Authentication failed - key: 797987, secret: x'
@@ -95,7 +95,7 @@ describe BurstSms do
     end
     
     it "Create error from failed response" do
-      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/messages_get_failure.txt"))
+      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/generic_failure.txt"))
       @response = @burst.get_messages()
       @response.total.should == nil
       @response.error.should == 'Authentication failed - key: 797987, secret: x'
@@ -122,7 +122,7 @@ describe BurstSms do
     end
     
     it "Create error from failed response" do
-      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/messages_add_failure.txt"))
+      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/generic_failure.txt"))
       @response = @burst.add_message('6147779990', 1075 , "sms txt\n of words and such:/")
       @response.total.should == nil
       @response.error.should == 'Authentication failed - key: 797987, secret: x'
@@ -161,8 +161,8 @@ describe BurstSms do
     end
     
     it "Create error from failed response" do
-      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/message_responses_failure.txt"))
-      @response = @burst.get_messages()
+      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/generic_failure.txt"))
+      @response = @burst.message_responses('123')
       @response.total.should == nil
       @response.error.should == 'Authentication failed - key: 797987, secret: x'
     end

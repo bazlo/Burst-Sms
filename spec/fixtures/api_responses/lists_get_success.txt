@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.get</method>
+	<total>2</total>
+	<time>2009-12-11 02:47:22 GMT</time>
+	<timestamp>1260499642 GMT</timestamp>
+	<dataset>
+		<data>
+			<id>1</id>
+			<name>My SMS List</name>
+			<recipient_count>3</recipient_count>
+		</data>
+		<data>
+			<id>2</id>
+			<name>My SMS List 2</name>
+			<recipient_count>9</recipient_count>
+		</data>
+	</dataset>
+</xml>

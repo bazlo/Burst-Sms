@@ -40,17 +40,19 @@ Usage
 
 **Retrieve history of sent messages** - [messages.get](http://burstsms.com/api-documentation/messages.get)
 
-    @burstsms.get_messages()  
-    
-    #takes optional offset and limit(default is 50)
-    @burstsms.get_messages(20,40)
+    @burstsms.get_messages()  #takes optional arguments offset and limit(default is 50)
     
 **Retrieve responses from a message** - [messages.responses](http://burstsms.com/api-documentation/messages.responses)
 
-    @burstsms.message_responses('message_id')  
+    @burstsms.message_responses('message_id')   #takes optional arguments offset and limit(default is 50)  
 
-    #takes optional offset and limit(default is 50)
-    @burstsms.message_responses('message_id', 20, 40)    
+**Retrieve Contact Lists** - [contact-lists.get](http://burstsms.com/api-documentation/contact-lists.get)
+
+    @burstsms.get_lists()  #takes optional arguments offset and limit(default is 50) 
+
+**Add Contact List** - [contact-lists.add](http://burstsms.com/api-documentation/contact-lists.add)
+
+    @burstsms.add_list('name of new list')    
 
 TODO
 ----
