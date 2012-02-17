@@ -16,6 +16,7 @@ module BurstSms
     include ListsAdd
     include ListsDelete
     include ListsGetRecipients
+    include ListsGetUnsubscribed
 
     tag 'request'
     

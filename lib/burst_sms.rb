@@ -27,6 +27,7 @@ require 'burst_sms/lists_get'
 require 'burst_sms/lists_add'
 require 'burst_sms/lists_delete'
 require 'burst_sms/lists_get_recipients'
+require 'burst_sms/lists_get_unsubscribed'
 
 
 require 'burst_sms/api'

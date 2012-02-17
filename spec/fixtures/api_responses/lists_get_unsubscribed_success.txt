@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.get-unsubscribed</method>
+	<total>3</total>
+	<time>2009-12-21 23:05:02 GMT</time>
+	<timestamp>1261436702 GMT</timestamp>
+	<dataset>
+		<data>
+			<mobile>61404800800</mobile>
+			<firstname>John</firstname>
+			<lastname>Doe</lastname>
+			<datetime_entry>2009-12-11 00:34:23</datetime_entry>
+			<dest_country>AU</dest_country>
+			<bounce_count>0</bounce_count>
+		</data>
+		<data>
+			<mobile>61404600600</mobile>
+			<firstname>Jane</firstname>
+			<lastname>Doe</lastname>
+			<datetime_entry>2009-11-26 13:10:56</datetime_entry>
+			<dest_country>AU</dest_country>
+			<bounce_count>0</bounce_count>
+		</data>
+		<data>
+			<mobile>61404300300</mobile>
+			<firstname>Jim</firstname>
+			<lastname>Citizen</lastname>
+			<datetime_entry>2009-11-26 13:11:11</datetime_entry>
+			<dest_country>AU</dest_country>
+			<bounce_count>0</bounce_count>
+		</data>
+	</dataset>
+</xml>

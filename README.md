@@ -89,6 +89,13 @@ Every method will return a `error` attribute if something goes wrong
 
     #returns :total :time :recipients 
     #recipients return :firstname :lastname :mobile :datetime_entry :dest_country :bounce_count
+    
+**Retrieve Contact List Unsubscribed** - [contact-lists.get-unsubscribed](http://burstsms.com/api-documentation/contact-lists.get-unsubscribed)
+
+    @burstsms.get_list_unsubscribed('list_id')   #takes optional arguments offset and limit(default is 50)  
+
+    #returns :total :time :recipients 
+    #recipients return :firstname :lastname :mobile :datetime_entry :dest_country :bounce_count    
 
 TODO
 ----

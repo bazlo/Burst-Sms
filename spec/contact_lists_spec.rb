@@ -109,4 +109,30 @@ describe BurstSms do
     end
   end
   
+  context "'contact-lists.get-unsubscribed' - http://burstsms.com.au/api-documentation/contact-lists.get-unsubscribed"  do
+    it "Builds correct XML structure" do
+      @request_body = @burst.get_list_unsubscribed_body("123", 0, 50)
+      @nok_parsed = Nokogiri::XML(@request_body)
+      nodes = ['//request/key', '//request/secret', '//request/version', '//request/method', '//request/params/id', '//request/params/offset', '//request/params/limit']
+      nodes.each { |n| @nok_parsed.should have_xml(n)}
+    end
+    
+    it "Sends correct API request and parses XML response to ruby object" do
+      # This has the potential to fail in ruby-1.8 due to Hash ordering... or lack of it.
+      stub_request(:post, BurstSms::API_URL).with(:body => File.read('spec/fixtures/api_requests/lists_get_unsubscribed.txt')).to_return(:status => 200, :body => File.read('spec/fixtures/api_responses/lists_get_unsubscribed_success.txt'))
+      @response = @burst.get_list_unsubscribed("123")
+      @response.total.should == '3'
+      @response.recipients.size.should == 3
+      @response.recipients.first.lastname.should == 'Doe'
+      @response.error.should == nil
+    end
+    
+    it "Create error from failed response" do
+      stub_request(:post, BurstSms::API_URL).to_return(:status => 200, :body => File.read("spec/fixtures/api_responses/generic_failure.txt"))
+      @response = @burst.get_list_unsubscribed("123")
+      @response.total.should == nil
+      @response.error.should == 'Authentication failed - key: 797987, secret: x'
+    end
+  end
+  
 end
