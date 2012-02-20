@@ -1,17 +1,15 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "burst_sms/version"
+require "burstsms/version"
 
 Gem::Specification.new do |s|
-  s.name        = "burst_sms"
+  s.name        = "burstsms"
   s.version     = BurstSms::VERSION
+  s.platform    = Gem::Platform::RUBY
   s.authors     = ["David Barlow"]
   s.email       = ["david@madeindata.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/madeindata/Burst-Sms"
   s.summary     = %q{Ruby Interface for the Burst SMS gateway}
-  # s.description = %q{TODO: Write a gem description}
-
-  s.rubyforge_project = "burst_sms"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
