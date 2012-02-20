@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<xml>
+	<method>contact-lists.add-recipient</method>
+	<total>1</total>
+	<time>2009-12-11 01:48:54 GMT</time>
+	<timestamp>1260496134 GMT</timestamp>
+	<data>
+		<result>ADDED</result>
+		<list_id>1076</list_id>
+	</data>
+</xml>

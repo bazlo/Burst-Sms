@@ -1,0 +1,11 @@
+request=<?xml version="1.0"?>
+<request>
+  <version>0.3</version>
+  <key>79798797897</key>
+  <secret>x</secret>
+  <method>contact-lists.delete-recipient</method>
+  <params>
+    <mobile>61412123123</mobile>
+    <list_id>123</list_id>
+  </params>
+</request>

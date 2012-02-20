@@ -2,7 +2,6 @@ require 'happymapper'
 
 module BurstSms
   module MessagesMultiple
-    # include HappyMapper
     
     def send_message(from, recipients, message, options={})
       @response = post_to_api(send_message_body(from, recipients, message, options))

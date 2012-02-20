@@ -44,6 +44,11 @@ Every method will return a `error` attribute if something goes wrong
   *__NOTE:__The gem handles conversion of mobile numbers to the format required by the API. Also duplicate and invalid numbers will be deleted from the array.*  
   __example__: you can pass in an array of numbers like `['+61 414 899 766', '0403 855 555', '0403-855-445']` and it will be converted to `['61414899766', '61403855555', '61403855445']`
   
+------
+
+Additional Methods  
+------------------
+  
 **Send a SMS to an existing list** - [messages.add](http://burstsms.com/api-documentation/messages.add)
 
     @burstsms.add_message('caller_id', 'list_id', 'message')
@@ -96,14 +101,28 @@ Every method will return a `error` attribute if something goes wrong
 
     #returns :total :time :recipients 
     #recipients return :firstname :lastname :mobile :datetime_entry :dest_country :bounce_count    
+    
+**Add Contact List Recipient** - [contact-lists.add-recipient](http://burstsms.com/api-documentation/contact-lists.add-recipient)
 
-TODO
-----
+    @burstsms.add_list_recipient("list_id", "mobile_number", :firstname => 'Bob', :lastname => 'Smith') #name fields optional    
 
-- Complete all user API functions.
+    #returns :total :time :result :list_id
+    #refer to Burst Sms docs for possible result values  
+    
+**Delete Contact List Recipient** - [contact-lists.delete-recipient](http://burstsms.com/api-documentation/contact-lists.delete-recipient)
+
+    @burstsms.delete_list_recipient("list_id", "mobile_number")    
+
+    #returns :total :time :result
+    #refer to Burst Sms docs for possible result values  
+
+------
+**TODO**
+
+- Complete 'contact-lists.add-multiple-recipients'
 - Add reseller API functions.
 
 Licence
 -------
 
-Copyright © 2012 *Made in Data Pty Ltd* and *David Barlow* [@madeindata](http://twitter.com/madeindata). Refer to terms in LICENCE file.
+Copyright &copy; 2012 *Made in Data Pty Ltd* and *David Barlow* [@madeindata](http://twitter.com/madeindata). Refer to terms in LICENCE file.
