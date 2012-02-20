@@ -117,6 +117,15 @@ Additional Methods
     #refer to Burst Sms docs for possible result values  
 
 ------
+
+Under the Hood
+--------------
+
+The `burstms` gem uses:
+
+- [UnhappyMapper](https://github.com/burtlo/happymapper) and [Nokogiri](http://nokogiri.org/) to handle the XML ugliness.
+- [HTTParty](https://github.com/jnunemaker/httparty) for the HTTP interaction with the API.
+
 **TODO**
 
 - Complete 'contact-lists.add-multiple-recipients'
