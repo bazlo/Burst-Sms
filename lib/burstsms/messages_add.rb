@@ -9,11 +9,12 @@ module BurstSms
     end
     
     def add_message_body(from, list_id, message, options={})
-      build_request("messages.add", :caller_id => check_valid_sender(from),
-                                    :list_id => list_id,
+      build_request("messages.add", :list_id => list_id,   
+                                    :caller_id => check_valid_sender(from),
                                     :message => encode_msg(message),
                                     :sendtime => (options.has_key?(:sendtime) ? options[:sendtime] : nil),
-                                    :contact_list => (options.has_key?(:contact_list) ? options[:contact_list] : nil))
+                                    :contact_list => (options.has_key?(:contact_list) ? options[:contact_list] : nil),
+                                    )
     end
 
     class Response
