@@ -9,8 +9,8 @@ module BurstSms
     end
     
     def delete_list_recipient_body(list_id, mobile)
-      build_request("contact-lists.delete-recipient", :list_id => list_id,
-                                                      :mobile => mobile)
+      build_request("contact-lists.delete-recipient", :mobile => mobile,
+                                                      :list_id => list_id)
     end
 
     class Response

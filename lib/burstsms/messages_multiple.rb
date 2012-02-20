@@ -9,8 +9,8 @@ module BurstSms
     end
     
     def send_message_body(from, recipients, message, options={})
-      build_request("messages.multiple",  :caller_id => check_valid_sender(from), 
-                                          :mobile => sanitize_numbers(recipients), 
+      build_request("messages.multiple",  :mobile => sanitize_numbers(recipients),
+                                          :caller_id => check_valid_sender(from), 
                                           :message => encode_msg(message),
                                           :sendtime => (options.has_key?(:sendtime) ? options[:sendtime] : nil),
                                           :contact_list => (options.has_key?(:contact_list) ? options[:contact_list] : nil))

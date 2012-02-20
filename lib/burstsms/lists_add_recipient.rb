@@ -9,8 +9,8 @@ module BurstSms
     end
     
     def add_list_recipient_body(list_id, mobile, options={})
-      build_request("contact-lists.add-recipient",  :list_id => list_id,
-                                                    :mobile => mobile,
+      build_request("contact-lists.add-recipient",  :mobile => mobile,
+                                                    :list_id => list_id,
                                                     :firstname => (options.has_key?(:firstname) ? options[:firstname] : nil),
                                                     :lastname => (options.has_key?(:lastname) ? options[:lastname] : nil),
                                                     :mobile_dest_country => (options.has_key?(:mobile_dest_country) ? options[:mobile_dest_country] : nil)
