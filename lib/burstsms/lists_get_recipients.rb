@@ -9,7 +9,7 @@ module BurstSms
     end
     
     def get_list_recipients_body(id, offset, limit)
-      build_request("contact-lists.recipients", :id => id,
+      build_request("contact-lists.get-recipients", :id => id,
                                                 :offset => offset,
                                                 :limit => limit )
     end
