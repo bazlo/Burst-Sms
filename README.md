@@ -121,7 +121,7 @@ Additional Methods
 Under the Hood
 --------------
 
-The `burstms` gem uses:
+The `burstsms` gem uses:
 
 - [UnhappyMapper](https://github.com/burtlo/happymapper) and [Nokogiri](http://nokogiri.org/) to handle the XML ugliness.
 - [HTTParty](https://github.com/jnunemaker/httparty) for the HTTP interaction with the API.
