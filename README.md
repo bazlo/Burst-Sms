@@ -16,12 +16,14 @@ and run `bundle` from your shell.
 
 Usage
 -----
-**Create an authenticated instance**
+**Create an authenticated instance**  
+
 ```ruby
   @burstsms = BurstSms::API.new('api_key', 'secret')
 ```
 
-**Send a SMS** - [messages.multiple](http://burstsms.com/api-documentation/messages.multiple)
+**Send a SMS** - [messages.multiple](http://burstsms.com/api-documentation/messages.multiple)  
+
 ```ruby
   @burstsms.send_message('caller_id', 'recipients', 'message')
   
@@ -50,13 +52,14 @@ Usage
 Additional Methods  
 ------------------
   
-**Send a SMS to an existing list** - [messages.add](http://burstsms.com/api-documentation/messages.add)
+**Send a SMS to an existing list** - [messages.add](http://burstsms.com/api-documentation/messages.add)  
+
 ```ruby
   @burstsms.add_message('caller_id', 'list_id', 'message')
 
   #returns :total :time :result :message_id :list_id :message :cost :balance :charge_error
 ```  
-**Retrieve history of sent messages** - [messages.get](http://burstsms.com/api-documentation/messages.get)
+**Retrieve history of sent messages** - [messages.get](http://burstsms.com/api-documentation/messages.get)  
 
 ```ruby
   @burstsms.get_messages()  #takes optional arguments offset and limit(default is 50)
@@ -65,7 +68,8 @@ Additional Methods
   #messages return :id :list_id :mobile_from :message :datetime_send :datetime_actioned :recipient_count :status :schedule
 ```     
 
-**Retrieve responses from a message** - [messages.responses](http://burstsms.com/api-documentation/messages.responses)
+**Retrieve responses from a message** - [messages.responses](http://burstsms.com/api-documentation/messages.responses)  
+
 ```ruby
   @burstsms.message_responses('message_id')   #takes optional arguments offset and limit(default is 50)  
   
@@ -73,7 +77,8 @@ Additional Methods
   #replies return :firstname :lastname :mobile :message :datetime_entry_orig
 ```
 
-**Retrieve Contact Lists** - [contact-lists.get](http://burstsms.com/api-documentation/contact-lists.get)
+**Retrieve Contact Lists** - [contact-lists.get](http://burstsms.com/api-documentation/contact-lists.get)  
+
 ```ruby
   @burstsms.get_lists()  #takes optional arguments offset and limit(default is 50) 
 
@@ -81,21 +86,24 @@ Additional Methods
   #lists return :id :name :recipient_count
 ```
 
-**Add Contact List** - [contact-lists.add](http://burstsms.com/api-documentation/contact-lists.add)
+**Add Contact List** - [contact-lists.add](http://burstsms.com/api-documentation/contact-lists.add)  
+
 ```ruby
   @burstsms.add_list('name of new list')    
   
   #returns :total :time :name :list_id :recipient_count
 ```    
 
-**Delete Contact List** - [contact-lists.delete](http://burstsms.com/api-documentation/contact-lists.delete)
+**Delete Contact List** - [contact-lists.delete](http://burstsms.com/api-documentation/contact-lists.delete)  
+
 ```ruby
   @burstsms.delete_list('list_id')  
   
   #returns :total :time :response  
 ```    
 
-**Retrieve Contact List Recipients** - [contact-lists.get-recipients](http://burstsms.com/api-documentation/contact-lists.get-recipients)
+**Retrieve Contact List Recipients** - [contact-lists.get-recipients](http://burstsms.com/api-documentation/contact-lists.get-recipients)  
+
 ```ruby
   @burstsms.get_list_recipients('list_id')   #takes optional arguments offset and limit(default is 50)  
 
@@ -103,7 +111,8 @@ Additional Methods
   #recipients return :firstname :lastname :mobile :datetime_entry :dest_country :bounce_count
 ```    
 
-**Retrieve Contact List Unsubscribed** - [contact-lists.get-unsubscribed](http://burstsms.com/api-documentation/contact-lists.get-unsubscribed)
+**Retrieve Contact List Unsubscribed** - [contact-lists.get-unsubscribed](http://burstsms.com/api-documentation/contact-lists.get-unsubscribed)  
+
 ```ruby
   @burstsms.get_list_unsubscribed('list_id')   #takes optional arguments offset and limit(default is 50)  
 
@@ -111,7 +120,8 @@ Additional Methods
   #recipients return :firstname :lastname :mobile :datetime_entry :dest_country :bounce_count    
 ```    
 
-**Add Contact List Recipient** - [contact-lists.add-recipient](http://burstsms.com/api-documentation/contact-lists.add-recipient)
+**Add Contact List Recipient** - [contact-lists.add-recipient](http://burstsms.com/api-documentation/contact-lists.add-recipient)  
+
 ```ruby
   @burstsms.add_list_recipient("list_id", "mobile_number", :firstname => 'Bob', :lastname => 'Smith') #name fields optional    
 
@@ -119,7 +129,8 @@ Additional Methods
   #refer to Burst Sms docs for possible result values  
 ```    
 
-**Delete Contact List Recipient** - [contact-lists.delete-recipient](http://burstsms.com/api-documentation/contact-lists.delete-recipient)
+**Delete Contact List Recipient** - [contact-lists.delete-recipient](http://burstsms.com/api-documentation/contact-lists.delete-recipient)  
+
 ```ruby
   @burstsms.delete_list_recipient("list_id", "mobile_number")    
 
