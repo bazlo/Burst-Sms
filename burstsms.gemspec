@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   
-  s.add_dependency "unhappymapper"
+  s.add_dependency "unhappymapper", "~> 0.4.4"
   s.add_dependency "httparty"
   
   s.add_development_dependency "rspec", "~> 2.6"

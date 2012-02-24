@@ -25,7 +25,7 @@ module BurstSms
     element :version, Float
     element :key, String
     element :secret, String
-    element :api_method, String, :tag => 'method_'
+    element :api_method, String, :tag => 'method'
     
     has_one :params, String
     
