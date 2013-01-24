@@ -13,7 +13,7 @@ module BurstSms
                                     :caller_id => check_valid_sender(from),
                                     :message => encode_msg(message),
                                     :sendtime => (options.has_key?(:sendtime) ? options[:sendtime] : nil),
-                                    :contact_list => (options.has_key?(:contact_list) ? options[:contact_list] : nil),
+                                    :contact_list => (options.has_key?(:contact_list) ? options[:contact_list] : nil)
                                     )
     end
 
