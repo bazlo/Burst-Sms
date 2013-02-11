@@ -17,11 +17,11 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   
-  s.add_dependency "unhappymapper", "~> 0.4.4"
+  s.add_dependency "unhappymapper", "~> 0.5.0"
   s.add_dependency "httparty"
   
   s.add_development_dependency "rspec", "~> 2.6"
-  s.add_development_dependency "webmock", "~> 1.7.10"
+  s.add_development_dependency "webmock", "~> 1.9.0"
   s.add_development_dependency 'rake'
   
 end
