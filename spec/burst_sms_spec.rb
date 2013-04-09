@@ -73,6 +73,13 @@ describe BurstSms do
       @response.result.should == nil
       @response.error.should == 'Authentication failed - key: 797987, secret: x'
     end
+
+    it "supports validity param" do
+      @request_body = @burst.send_message_body('6147779990', @numbers_cocktail,
+        "Validity test", validity: 10)
+      @nok_parsed = Nokogiri::XML(@request_body)
+      @nok_parsed.should have_xml('//request/params/validity', '10')
+    end
   end
   
   context "'messages.get' - http://burstsms.com/api-documentation/messages.get" do
@@ -111,6 +118,13 @@ describe BurstSms do
       nodes.each { |n| @nok_parsed.should have_xml(n)}
     end
     
+    it "supports validity param" do
+      @request_body = @burst.add_message_body('6147779990', 123, "Validity test",
+        validity: 10)
+      @nok_parsed = Nokogiri::XML(@request_body)
+      @nok_parsed.should have_xml('//request/params/validity', '10')
+    end
+
     it "Sends correct API request and parses XML response to ruby object" do
       # This has the potential to fail in ruby-1.8 due to Hash ordering... or lack of it.
       stub_request(:post, BurstSms::API_URL).with(:body => File.read('spec/fixtures/api_requests/messages_add.txt')).to_return(:status => 200, :body => File.read('spec/fixtures/api_responses/messages_add_success.txt'))
