@@ -153,6 +153,11 @@ The `burstsms` gem uses:
 - Complete 'contact-lists.add-multiple-recipients'
 - Add reseller API functions.
 
+Contributors
+------------
+
+[Burst Sms Contributors](https://github.com/madeindata/Burst-Sms/contributors)
+
 Licence
 -------
 
