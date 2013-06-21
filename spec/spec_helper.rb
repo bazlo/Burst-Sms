@@ -1,6 +1,9 @@
 require 'rspec'
 require 'nokogiri'
 require 'webmock/rspec'
+require 'coveralls'
+
+Coveralls.wear!
 
 require File.dirname(__FILE__) + '/../lib/burstsms'
 
