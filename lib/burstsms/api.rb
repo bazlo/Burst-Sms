@@ -1,7 +1,7 @@
 require 'happymapper'
 
 module BurstSms
-  API_URL = "https://burstsms.com/api"
+  API_URL = "https://transmitsms.com/api"
   API_VERSION = 0.3
   
   class API
